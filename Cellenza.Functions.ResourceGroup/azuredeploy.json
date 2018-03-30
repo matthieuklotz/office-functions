@@ -1,0 +1,82 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "companyName": {
+      "type": "string",
+      "defaultValue": "cellenza"
+    },
+    "projectName": {
+      "type": "string",
+      "defaultValue": "office"
+    },
+    "environment": {
+      "type": "string",
+      "defaultValue": "office",
+      "allowedValues": [
+        "dev",
+        "rct",
+        "prd"
+      ]
+    }
+  },
+  "variables": {
+    "resourcesPrefixWithHyphen": "[concat(parameters('companyName'), '-', parameters('projectName'), '-', parameters('environment'), '-')]",
+    "resourcesPrefixWithoutHyphen": "[replace(variables('resourcesPrefixWithHyphen'), '-', '')]",
+    "funcsStorageName": "[concat(variables('resourcesPrefixWithoutHyphen'), 'funcsto')]",
+    "bizStorageName": "[concat(variables('resourcesPrefixWithoutHyphen'), 'sto')]"
+  },
+  "resources": [
+    {
+      "apiVersion": "[providers('Microsoft.Storage', 'storageAccounts').apiVersions[0]]",
+      "type": "Microsoft.Storage/storageAccounts",
+      "name": "[variables('funcsStorageName')]",
+      "location": "[resourceGroup().location]",
+      "comments": "Storage Account that hosts data for functions",
+      "tags": {
+        "displayName": "Functions Storage Account"
+      },
+      "kind": "Storage",
+      "sku": {
+        "name": "Standard_LRS",
+        "tier": "Standard"
+      },
+      "properties": {
+        "encryption": {
+          "keySource": "Microsoft.Storage",
+          "services": {
+            "blob": {
+              "enabled": true
+            }
+          }
+        }
+      }
+    },
+    {
+      "apiVersion": "[providers('Microsoft.Storage', 'storageAccounts').apiVersions[0]]",
+      "type": "Microsoft.Storage/storageAccounts",
+      "name": "[variables('bizStorageName')]",
+      "location": "[resourceGroup().location]",
+      "comments": "Storage Account that hosts data for functions",
+      "tags": {
+        "displayName": "Functions Storage Account"
+      },
+      "kind": "Storage",
+      "sku": {
+        "name": "Standard_LRS",
+        "tier": "Standard"
+      },
+      "properties": {
+        "encryption": {
+          "keySource": "Microsoft.Storage",
+          "services": {
+            "blob": {
+              "enabled": true
+            }
+          }
+        }
+      }
+    }
+  ],
+  "outputs": {}
+}

@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2027
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cellenza.Functions.Office", "Cellenza.Functions.Office\Cellenza.Functions.Office.csproj", "{5ECAF649-058C-4C87-9D51-98B767630150}"
+EndProject
+Project("{151D2E53-A2C4-4D7D-83FE-D05416EBD58E}") = "Cellenza.Functions.ResourceGroup", "Cellenza.Functions.ResourceGroup\Cellenza.Functions.ResourceGroup.deployproj", "{73A195C9-A05A-45EB-AD78-AD9AFE01E38B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5ECAF649-058C-4C87-9D51-98B767630150}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5ECAF649-058C-4C87-9D51-98B767630150}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5ECAF649-058C-4C87-9D51-98B767630150}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5ECAF649-058C-4C87-9D51-98B767630150}.Release|Any CPU.Build.0 = Release|Any CPU
+		{73A195C9-A05A-45EB-AD78-AD9AFE01E38B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73A195C9-A05A-45EB-AD78-AD9AFE01E38B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73A195C9-A05A-45EB-AD78-AD9AFE01E38B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73A195C9-A05A-45EB-AD78-AD9AFE01E38B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AA4F6F61-6A3A-47B5-9F20-3A7B0E5FEE9E}
+	EndGlobalSection
+EndGlobal
